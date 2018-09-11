@@ -7,19 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		875C883F2147E4E000EC72A0 /* UICard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 875C883E2147E4E000EC72A0 /* UICard.swift */; };
+		875C884721481F6B00EC72A0 /* WelcomeCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 875C884621481F6B00EC72A0 /* WelcomeCard.swift */; };
 		87F6572D2147DFCB00B0BC45 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F6572C2147DFCB00B0BC45 /* AppDelegate.swift */; };
-		87F6572F2147DFCB00B0BC45 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F6572E2147DFCB00B0BC45 /* ViewController.swift */; };
-		87F657322147DFCB00B0BC45 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87F657302147DFCB00B0BC45 /* Main.storyboard */; };
+		87F6572F2147DFCB00B0BC45 /* WelcomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F6572E2147DFCB00B0BC45 /* WelcomeController.swift */; };
 		87F657352147DFCB00B0BC45 /* ProRevise_GCSE.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 87F657332147DFCB00B0BC45 /* ProRevise_GCSE.xcdatamodeld */; };
 		87F657372147DFCC00B0BC45 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 87F657362147DFCC00B0BC45 /* Assets.xcassets */; };
 		87F6573A2147DFCC00B0BC45 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87F657382147DFCC00B0BC45 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		875C883E2147E4E000EC72A0 /* UICard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICard.swift; sourceTree = "<group>"; };
+		875C884621481F6B00EC72A0 /* WelcomeCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeCard.swift; sourceTree = "<group>"; };
 		87F657292147DFCB00B0BC45 /* ProRevise:GCSE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ProRevise:GCSE.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		87F6572C2147DFCB00B0BC45 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		87F6572E2147DFCB00B0BC45 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		87F657312147DFCB00B0BC45 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		87F6572E2147DFCB00B0BC45 /* WelcomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeController.swift; sourceTree = "<group>"; };
 		87F657342147DFCB00B0BC45 /* ProRevise_GCSE.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ProRevise_GCSE.xcdatamodel; sourceTree = "<group>"; };
 		87F657362147DFCC00B0BC45 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		87F657392147DFCC00B0BC45 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -56,13 +58,14 @@
 		87F6572B2147DFCB00B0BC45 /* ProRevise:GCSE */ = {
 			isa = PBXGroup;
 			children = (
+				875C883E2147E4E000EC72A0 /* UICard.swift */,
 				87F6572C2147DFCB00B0BC45 /* AppDelegate.swift */,
-				87F6572E2147DFCB00B0BC45 /* ViewController.swift */,
-				87F657302147DFCB00B0BC45 /* Main.storyboard */,
+				87F6572E2147DFCB00B0BC45 /* WelcomeController.swift */,
 				87F657362147DFCC00B0BC45 /* Assets.xcassets */,
 				87F657382147DFCC00B0BC45 /* LaunchScreen.storyboard */,
 				87F6573B2147DFCC00B0BC45 /* Info.plist */,
 				87F657332147DFCB00B0BC45 /* ProRevise_GCSE.xcdatamodeld */,
+				875C884621481F6B00EC72A0 /* WelcomeCard.swift */,
 			);
 			path = "ProRevise:GCSE";
 			sourceTree = "<group>";
@@ -127,7 +130,6 @@
 			files = (
 				87F6573A2147DFCC00B0BC45 /* LaunchScreen.storyboard in Resources */,
 				87F657372147DFCC00B0BC45 /* Assets.xcassets in Resources */,
-				87F657322147DFCB00B0BC45 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,23 +140,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				87F6572F2147DFCB00B0BC45 /* ViewController.swift in Sources */,
+				87F6572F2147DFCB00B0BC45 /* WelcomeController.swift in Sources */,
 				87F657352147DFCB00B0BC45 /* ProRevise_GCSE.xcdatamodeld in Sources */,
 				87F6572D2147DFCB00B0BC45 /* AppDelegate.swift in Sources */,
+				875C884721481F6B00EC72A0 /* WelcomeCard.swift in Sources */,
+				875C883F2147E4E000EC72A0 /* UICard.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		87F657302147DFCB00B0BC45 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				87F657312147DFCB00B0BC45 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		87F657382147DFCC00B0BC45 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -287,6 +283,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VMLASLU96D;
 				INFOPLIST_FILE = "ProRevise:GCSE/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -305,6 +302,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VMLASLU96D;
 				INFOPLIST_FILE = "ProRevise:GCSE/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
