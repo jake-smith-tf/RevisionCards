@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		872E3C82214877410092F3B0 /* SubjectsTBC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872E3C81214877410092F3B0 /* SubjectsTBC.swift */; };
+		872E3C84214879D00092F3B0 /* SubjectCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872E3C83214879D00092F3B0 /* SubjectCell.swift */; };
+		872E3C862148832F0092F3B0 /* TopicsTBC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872E3C852148832F0092F3B0 /* TopicsTBC.swift */; };
 		875C883F2147E4E000EC72A0 /* UICard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 875C883E2147E4E000EC72A0 /* UICard.swift */; };
 		875C884721481F6B00EC72A0 /* WelcomeCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 875C884621481F6B00EC72A0 /* WelcomeCard.swift */; };
 		87F6572D2147DFCB00B0BC45 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F6572C2147DFCB00B0BC45 /* AppDelegate.swift */; };
@@ -17,6 +20,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		872E3C81214877410092F3B0 /* SubjectsTBC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectsTBC.swift; sourceTree = "<group>"; };
+		872E3C83214879D00092F3B0 /* SubjectCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectCell.swift; sourceTree = "<group>"; };
+		872E3C852148832F0092F3B0 /* TopicsTBC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicsTBC.swift; sourceTree = "<group>"; };
 		875C883E2147E4E000EC72A0 /* UICard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICard.swift; sourceTree = "<group>"; };
 		875C884621481F6B00EC72A0 /* WelcomeCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeCard.swift; sourceTree = "<group>"; };
 		87F657292147DFCB00B0BC45 /* ProRevise:GCSE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ProRevise:GCSE.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -61,11 +67,14 @@
 				875C883E2147E4E000EC72A0 /* UICard.swift */,
 				87F6572C2147DFCB00B0BC45 /* AppDelegate.swift */,
 				87F6572E2147DFCB00B0BC45 /* WelcomeController.swift */,
+				872E3C81214877410092F3B0 /* SubjectsTBC.swift */,
+				872E3C852148832F0092F3B0 /* TopicsTBC.swift */,
+				875C884621481F6B00EC72A0 /* WelcomeCard.swift */,
 				87F657362147DFCC00B0BC45 /* Assets.xcassets */,
 				87F657382147DFCC00B0BC45 /* LaunchScreen.storyboard */,
 				87F6573B2147DFCC00B0BC45 /* Info.plist */,
 				87F657332147DFCB00B0BC45 /* ProRevise_GCSE.xcdatamodeld */,
-				875C884621481F6B00EC72A0 /* WelcomeCard.swift */,
+				872E3C83214879D00092F3B0 /* SubjectCell.swift */,
 			);
 			path = "ProRevise:GCSE";
 			sourceTree = "<group>";
@@ -142,7 +151,10 @@
 			files = (
 				87F6572F2147DFCB00B0BC45 /* WelcomeController.swift in Sources */,
 				87F657352147DFCB00B0BC45 /* ProRevise_GCSE.xcdatamodeld in Sources */,
+				872E3C82214877410092F3B0 /* SubjectsTBC.swift in Sources */,
+				872E3C84214879D00092F3B0 /* SubjectCell.swift in Sources */,
 				87F6572D2147DFCB00B0BC45 /* AppDelegate.swift in Sources */,
+				872E3C862148832F0092F3B0 /* TopicsTBC.swift in Sources */,
 				875C884721481F6B00EC72A0 /* WelcomeCard.swift in Sources */,
 				875C883F2147E4E000EC72A0 /* UICard.swift in Sources */,
 			);

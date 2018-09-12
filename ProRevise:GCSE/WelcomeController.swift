@@ -21,20 +21,42 @@ class WelcomeController: UIViewController,UICardDelegate {
     
     func swiped(sender: UICard, direction: UICard.Direction) {
         self.index += 1
+        print("Swiped")
         UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.0, options: [.allowAnimatedContent], animations: {
             sender.animator.removeAllBehaviors()
             sender.center = CGPoint(x: self.view.frame.width + sender.frame.width, y: self.view.center.y)
             sender.layoutIfNeeded()
+            /* Causes slowness
             self.view.backgroundColor = self.bgColors[safe: self.index]?.darker() ?? UIColor.white
             self.cards.forEach {
                 $0.backgroundColor = self.bgColors[safe: self.index] ?? UIColor.white
             }
+            */
         }, completion: { completed in
             self.cards.removeFirst()
             sender.removeFromSuperview()
         })
+        if self.index == self.titles.count {
+            let navController = UINavigationController(rootViewController: SubjectsTBC())
+            //navController.modalTransitionStyle = .crossDissolve
+            print("GAHAH")
+            self.present(navController, animated: true, completion: nil)
+        }
     }
     
+    override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
+        coordinator.animate(alongsideTransition: { (context) in
+            self.cards.forEach {
+                $0.frame = CGRect(origin: CGPoint.zero, size: CGSize(width: coordinator.containerView.frame.width*0.95, height: coordinator.containerView.frame.height*0.9))
+                $0.center = context.containerView.center
+                $0.initialCenter = $0.center
+                $0.updateConstraints()
+                $0.layoutIfNeeded()
+                
+                
+            }
+        }, completion: nil)
+    }
     
     
     override func viewDidLoad() {
@@ -46,7 +68,7 @@ class WelcomeController: UIViewController,UICardDelegate {
             let newCard = WelcomeCard(frame: CGRect(origin: CGPoint.zero, size: CGSize(width: sWidth*0.95, height: sHeight*0.9)))
             newCard.swipeRight = true
             newCard.delegate = self
-            newCard.backgroundColor = bgColors.first ?? UIColor.white
+            newCard.backgroundColor = bgColors[i]
             let spacing: CGFloat = CGFloat(i)
             newCard.title.sizeToFit()
             newCard.title.updateConstraints()
@@ -56,6 +78,7 @@ class WelcomeController: UIViewController,UICardDelegate {
             newCard.layer.zPosition = CGFloat(-i)
             newCard.title.text = titles[safe: i] ?? ""
             newCard.image.image = images[safe: i] ?? UIImage()
+            newCard.image.tintColor = UIColor.white
             newCard.textView.text = content[safe: i] ?? ""
             newCard.swipeText.text = swipeMessage[safe: i] ?? "Next"
             cards.append(newCard)

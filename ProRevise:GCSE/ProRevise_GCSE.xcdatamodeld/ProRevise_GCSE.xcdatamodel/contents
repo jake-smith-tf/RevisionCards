@@ -21,8 +21,8 @@
         <relationship name="subject" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Subject" inverseName="topic" inverseEntity="Subject" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Subject" positionX="-63" positionY="-18" width="128" height="120"/>
-        <element name="Topic" positionX="459" positionY="-18" width="128" height="118"/>
         <element name="Card" positionX="448" positionY="270" width="128" height="103"/>
+        <element name="Subject" positionX="-63" positionY="-18" width="128" height="118"/>
+        <element name="Topic" positionX="459" positionY="-18" width="128" height="118"/>
     </elements>
 </model>

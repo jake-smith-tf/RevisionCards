@@ -18,14 +18,6 @@ class UICard: UIView,UIDynamicAnimatorDelegate {
     var initialCenter: CGPoint!
     var delegate: UICardDelegate?
     
-    enum Direction {
-        case up
-        case down
-        case left
-        case right
-    }
-    
-    
     @IBInspectable var cornerRadius: CGFloat = 10 {
         didSet {
             layer.cornerRadius = cornerRadius
@@ -34,8 +26,6 @@ class UICard: UIView,UIDynamicAnimatorDelegate {
     }
     
     @IBInspectable var flippable: Bool = false
-    
-    
     @IBInspectable var swipeLeft: Bool = false
     @IBInspectable var swipeRight: Bool = false
     @IBInspectable var swipeUp: Bool = false
@@ -44,6 +34,13 @@ class UICard: UIView,UIDynamicAnimatorDelegate {
     override init(frame: CGRect) {
         super.init(frame: frame)
         layer.cornerRadius = cornerRadius
+    }
+    
+    enum Direction {
+        case up
+        case down
+        case left
+        case right
     }
     
     override func didMoveToSuperview() {
@@ -102,7 +99,6 @@ class UICard: UIView,UIDynamicAnimatorDelegate {
                         self.animator.removeAllBehaviors()
                         self.transform = CGAffineTransform.init(rotationAngle: 0)
                         self.layoutIfNeeded()
-                        self.alpha = 1.0
                         if self.translatesAutoresizingMaskIntoConstraints == true
                         {
                             self.center = self.initialCenter
