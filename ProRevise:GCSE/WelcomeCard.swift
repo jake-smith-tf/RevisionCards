@@ -39,8 +39,7 @@ class WelcomeCard: UICard {
         let titleHoz = title.centerXAnchor.constraint(equalTo: self.centerXAnchor)
         let titleTop = title.topAnchor.constraint(equalTo: self.topAnchor, constant: 20)
         let titleWidth = title.widthAnchor.constraint(equalToConstant: 0.8*self.frame.width)
-        let titleHeight = title.heightAnchor.constraint(greaterThanOrEqualToConstant: 0)
-        self.addConstraints([titleHoz,titleTop,titleWidth,titleHeight])
+        self.addConstraints([titleHoz,titleTop,titleWidth])
         title.textAlignment = .center
         title.font = UIFont.systemFont(ofSize: 40, weight: .medium)
         title.textColor = UIColor.white
@@ -49,9 +48,10 @@ class WelcomeCard: UICard {
         title.minimumScaleFactor = 0.5
         image.translatesAutoresizingMaskIntoConstraints = false
         let imgTop = image.topAnchor.constraint(equalTo: title.bottomAnchor, constant: 10)
-        let imgWidth = image.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.4)
-        let imgHeight = image.heightAnchor.constraint(equalTo: image.widthAnchor, multiplier: 1.0)
+        let imgHeight = image.heightAnchor.constraint(lessThanOrEqualToConstant: 100)
+        let imgWidth = image.widthAnchor.constraint(equalTo: image.heightAnchor, multiplier: 1)
         let imgCenter = image.centerXAnchor.constraint(equalTo: self.centerXAnchor, constant: 0)
+        
         image.layer.cornerRadius = 10
         image.clipsToBounds = true
         self.addConstraints([imgTop,imgWidth,imgHeight,imgCenter])
@@ -106,4 +106,41 @@ class WelcomeCard: UICard {
     }
     
     
+}
+
+extension UITextView {
+    func updateTextFont(maxSize: CGFloat?) {
+        if (self.text.isEmpty || self.bounds.size.equalTo(CGSize.zero)) {
+            return;
+        }
+        
+        
+        
+        let textViewSize = self.frame.size;
+        let fixedWidth = textViewSize.width;
+        let expectSize = self.sizeThatFits(CGSize(width: fixedWidth, height: CGFloat(MAXFLOAT)))
+        print(font!.pointSize,self.text)
+        
+        var expectFont = self.font
+        if (expectSize.height > textViewSize.height) {
+            
+            while (self.sizeThatFits(CGSize(width: fixedWidth, height: CGFloat(MAXFLOAT))).height > textViewSize.height) {
+                if self.font!.pointSize < 18 {
+                    self.text = self.text.replacingOccurrences(of: "\n\n", with: " \n")
+                }
+                expectFont = self.font!.withSize(self.font!.pointSize - 1)
+                self.font = expectFont
+            }
+        }
+        else {
+            while (self.sizeThatFits(CGSize(width: fixedWidth, height: CGFloat(MAXFLOAT))).height < textViewSize.height && Int(self.font!.pointSize) < Int(maxSize ?? CGFloat.infinity)) {
+                if self.font!.pointSize > 18 {
+                    self.text = self.text.replacingOccurrences(of: " \n", with: "\n\n")
+                }
+                expectFont = self.font
+                self.font = self.font!.withSize(self.font!.pointSize + 1)
+            }
+            self.font = expectFont
+        }
+    }
 }

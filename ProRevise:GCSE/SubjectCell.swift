@@ -24,11 +24,13 @@ class SubjectCell: UITableViewCell {
         let iHeight = icon.heightAnchor.constraint(equalTo: contentView.heightAnchor, multiplier: 0.9)
         let iWidth = icon.widthAnchor.constraint(equalTo: contentView.heightAnchor, multiplier: 0.9)
         contentView.addConstraints([iLeft,iCenter,iHeight,iWidth])
-        let sLeft = subjectName.leftAnchor.constraint(equalTo: icon.rightAnchor, constant: 10)
+        let sLeft = subjectName.leftAnchor.constraint(equalTo: icon.rightAnchor, constant: 5)
+        let sRight = subjectName.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -10)
         let sCenter = subjectName.centerYAnchor.constraint(equalTo: contentView.centerYAnchor, constant: 0)
         let sHeight = subjectName.heightAnchor.constraint(equalTo: contentView.heightAnchor, multiplier: 0.9)
+        
         self.separatorInset = UIEdgeInsets(top: 0, left: 54, bottom: 0, right: 0)
-        contentView.addConstraints([sLeft,sCenter,sHeight])
+        contentView.addConstraints([sLeft,sCenter,sHeight,sRight])
         
     }
     

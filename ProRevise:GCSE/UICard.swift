@@ -43,7 +43,13 @@ class UICard: UIView,UIDynamicAnimatorDelegate {
         case right
     }
     
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        layer.shadowPath = UIBezierPath(roundedRect: bounds, cornerRadius: cornerRadius).cgPath
+    }
+    
     override func didMoveToSuperview() {
+        
         layer.masksToBounds = false
         layer.borderColor = UIColor.black.cgColor
         layer.borderWidth = 0.1
@@ -52,8 +58,9 @@ class UICard: UIView,UIDynamicAnimatorDelegate {
         layer.shadowOffset = CGSize(width: 0, height: 1)
         layer.shadowRadius = 1
         layer.shadowPath = UIBezierPath(roundedRect: bounds, cornerRadius: cornerRadius).cgPath
-        layer.shouldRasterize = true
-        layer.rasterizationScale = UIScreen.main.scale
+        //layer.shouldRasterize = false
+       // layer.rasterizationScale = UIScreen.main.scale
+ 
         initialCenter = self.center
         if let superView = self.superview {
             animator = UIDynamicAnimator(referenceView: superView)
